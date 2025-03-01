@@ -21,7 +21,7 @@ function Footer() {
           </div>
 
           {/* Left Section - Services */}
-          <div className="w-full md:w-1/4 mt-7 ml-24 mb-8 md:mb-0">
+          <div className="w-full md:w-1/4 mt-7 md:ml-24 mb-8 md:mb-0">
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>Reel-Time Tracking</li>
