@@ -50,8 +50,18 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center">
-            <Button to="/login">Login</Button>
-            <Button to="/sign-up" variant="secondary">
+            <Button
+              to="https://ax-transportation.netlify.app"
+              target="_blank"
+            >
+              Login
+            </Button>
+
+            <Button
+              to="https://ax-transportation.netlify.app"
+              target="_blank"
+              variant="secondary"
+            >
               Sign Up
             </Button>
           </div>
@@ -118,8 +128,18 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Buttons */}
             <div className="mt-auto flex flex-col space-y-2">
-              <Button to="/sign-in">Login</Button>
-              <Button to="/sign-up" variant="secondary">
+              <Button
+                to="https://ax-transportation.netlify.app"
+                target="_blank"
+              >
+                Login
+              </Button>
+
+              <Button
+                to="https://ax-transportation.netlify.app"
+                target="_blank"
+                variant="secondary"
+              >
                 Sign Up
               </Button>
             </div>

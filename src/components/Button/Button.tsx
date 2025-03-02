@@ -6,10 +6,11 @@ interface ButtonProps {
   children: React.ReactNode;
   variant?: "primary" | "secondary";
   className?: string;
+  target?: "_blank" | "_self";
 }
 
 const Button = forwardRef<HTMLAnchorElement, ButtonProps>(
-  ({ to, children, variant = "primary", className = "" }, ref) => {
+  ({ to, children, target,variant = "primary", className = "" }, ref) => {
     const baseStyle =
       "px-3 sm:px-4 py-2.5 font-poppins text-[20px] rounded transition-colors";
     const styles = {
@@ -21,6 +22,8 @@ const Button = forwardRef<HTMLAnchorElement, ButtonProps>(
       <Link
         ref={ref}
         to={to}
+        target={target} 
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
         className={`${baseStyle} ${styles[variant]} ${className}`}
       >
         {children}
