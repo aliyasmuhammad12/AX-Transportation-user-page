@@ -89,16 +89,31 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Items */}
           <div className="flex flex-col h-full pt-20 pb-6 px-4">
             <nav className="flex flex-col space-y-4 text-gray-200">
-              {["Home", "Driver", "Dashboard", "Setting"].map((item, index) => (
-                <NavLink
-                  key={index}
-                  to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="hover:text-white hover:border-b-2 hover:border-[#FB8A00] transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
-                </NavLink>
-              ))}
+              {["Home", "Driver", "Dashboard", "Setting"].map((item, index) =>
+                item === "Driver" ? (
+                  <a
+                    key={index}
+                    href="https://ax-transportation.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-200 hover:text-white hover:border-b-2 hover:border-[#FB8A00] transition-colors py-2"
+                  >
+                    {item}
+                  </a>
+                ) : (
+                  <NavLink
+                    key={index}
+                    to={`/${item.toLowerCase()}`}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-white font-medium text-2xl font-poppins hover:text-white hover:border-b-2 border-black py-2 transition-colors"
+                        : "text-gray-200 hover:text-white hover:border-b-2 hover:border-[#FB8A00] transition-colors py-2"
+                    }
+                  >
+                    {item}
+                  </NavLink>
+                )
+              )}
             </nav>
 
             {/* Mobile Buttons */}
